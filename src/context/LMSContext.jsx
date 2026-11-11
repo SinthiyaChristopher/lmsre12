@@ -6,12 +6,24 @@ const LMSContext = createContext(null);
 export const useLMS = () => useContext(LMSContext);
 
 const initial = {
-  enrolled: [],
-  completed: {}, // { courseId: [lessonIndex] }
-  scores: {}, // { courseId: { score, total } }
+  enrolled: ["c1","c2","c3"],
+  completed: {
+    c1:[0,1,2],
+    c2:[0,1],
+  }, // { courseId: [lessonIndex] }
+  scores: {
+    c1:{
+      score:3,
+      total:3,
+    },
+    c2:{
+      score:2,
+      total:3,
+    },
+  }, // { courseId: { score, total } }
   extra: [], // courses added by admin
   removed: [], // ids of deleted courses
-  profile: { name: "Alex Morgan", email: "alex@example.com" },
+  profile: { name: "Sinthiya", email: "sinthiya@example.com" },
 };
 
 export function LMSProvider({ children }) {
