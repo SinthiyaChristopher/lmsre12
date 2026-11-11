@@ -30,10 +30,14 @@ const activities = [
 
 export default function Dashboard() {
   const { state, courses, isEnrolled, doneCount } = useLMS();
+  console.log("STATE:", state);
+ console.log("COURSES:", courses);
+ console.log("ENROLLED IDS:", state.enrolled);
 
   const enrolled = courses.filter((c) => isEnrolled(c.id));
+  console.log("ENROLLED COURSES:", enrolled);
   const lessons = enrolled.reduce((sum, c) => sum + doneCount(c), 0);
-
+  console.log("LESSONS:", lessons);
   const scores = Object.values(state.scores);
   const avg = scores.length
     ? Math.round(
