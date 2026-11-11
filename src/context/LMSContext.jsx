@@ -8,8 +8,9 @@ export const useLMS = () => useContext(LMSContext);
 const initial = {
   enrolled: ["c1","c2","c3"],
   completed: {
-    c1:[0,1,2],
-    c2:[0,1],
+    c1:[0,1,2,3],
+    c2:[0,1,2,3],
+    c3:[0,1]
   }, // { courseId: [lessonIndex] }
   scores: {
     c1:{
