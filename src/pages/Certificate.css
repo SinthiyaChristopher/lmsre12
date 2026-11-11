@@ -1,0 +1,79 @@
+.cert-page { max-width: 1000px; margin: 0 auto; }
+.cert-actions { display: flex; justify-content: space-between; gap: 0.75rem; margin-bottom: 1.2rem; }
+
+.cert {
+  container-type: inline-size;
+  width: 100%;
+  aspect-ratio: 1.414 / 1; /* A4 landscape */
+  padding: 2.2cqw;
+  background: #fffdf7;
+  color: #1f2937;
+  font-family: Georgia, "Times New Roman", serif;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.cert-frame {
+  position: relative;
+  height: 100%;
+  border: 0.35cqw solid #b8892b;
+  outline: 0.12cqw solid #b8892b;
+  outline-offset: -1.6cqw;
+  padding: 3.5cqw 6cqw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background:
+    radial-gradient(circle at 0 0, #f3e3b8 0, transparent 14cqw),
+    radial-gradient(circle at 100% 0, #f3e3b8 0, transparent 14cqw),
+    radial-gradient(circle at 0 100%, #f3e3b8 0, transparent 14cqw),
+    radial-gradient(circle at 100% 100%, #f3e3b8 0, transparent 14cqw);
+}
+
+.cert-brand { font-family: system-ui, sans-serif; font-weight: 800; font-size: 2cqw; letter-spacing: 0.25cqw; color: #4f46e5; text-transform: uppercase; }
+.cert-kicker { margin: 1.2cqw 0 0.8cqw; font-size: 4.4cqw; font-weight: 700; letter-spacing: 0.3cqw; text-transform: uppercase; color: #8a6414; }
+.cert-lead { margin: 0.6cqw 0; font-size: 1.7cqw; font-style: italic; color: #4b5563; }
+.cert-name {
+  margin: 0.8cqw 0;
+  padding: 0 3cqw 0.6cqw;
+  font-size: 6.2cqw;
+  font-weight: 400;
+  font-style: italic;
+  color: #111827;
+  border-bottom: 0.15cqw solid #b8892b;
+}
+.cert-course { margin: 1cqw 0 0.6cqw; font-size: 3.4cqw; font-weight: 700; color: #1e1b4b; }
+.cert-meta { margin: 0; font-family: system-ui, sans-serif; font-size: 1.4cqw; color: #6b7280; }
+
+.cert-foot { width: 100%; margin-top: 3cqw; display: flex; align-items: flex-end; justify-content: space-between; }
+.cert-sign { width: 24cqw; display: flex; flex-direction: column; align-items: center; }
+.cert-sign .sig { font-family: "Brush Script MT", "Segoe Script", cursive; font-size: 3cqw; color: #1e1b4b; line-height: 1; }
+.cert-sign .date { font-size: 1.9cqw; line-height: 1.4; }
+.cert-sign .line { width: 100%; border-top: 0.12cqw solid #6b7280; margin: 0.5cqw 0; }
+.cert-sign small { font-family: system-ui, sans-serif; font-size: 1.2cqw; color: #6b7280; }
+
+.cert-seal {
+  width: 10cqw; height: 10cqw; border-radius: 50%;
+  display: grid; place-content: center; text-align: center;
+  color: #fff;
+  background: radial-gradient(circle at 30% 30%, #f3d27a, #b8892b 70%);
+  box-shadow: 0 0 0 0.5cqw #fffdf7, 0 0 0 0.7cqw #b8892b;
+}
+.cert-seal span { font-size: 3.6cqw; line-height: 1; }
+.cert-seal small { font-family: system-ui, sans-serif; font-size: 1cqw; font-weight: 700; letter-spacing: 0.1cqw; text-transform: uppercase; }
+
+.cert-id { position: absolute; bottom: 2.4cqw; font-family: system-ui, sans-serif; font-size: 1cqw; letter-spacing: 0.1cqw; color: #9ca3af; }
+
+@media print {
+  @page { size: A4 landscape; margin: 0; }
+  header, .no-print { display: none !important; }
+  body { background: #fff; }
+  main { max-width: none; padding: 0; }
+  .cert-page { max-width: none; }
+  .cert {
+    box-shadow: none;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
